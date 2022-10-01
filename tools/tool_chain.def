@@ -31,6 +31,7 @@ CROSS_MAKE := make
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 mkfile_dir := $(dir $(mkfile_path))
 TOOL_CHAIN_PATH ?= $(mkfile_dir)../w600-gcc-arm/bin/
+APP_VERSION ?= 1.0.0
 
 # select which tools to use as compiler, librarian and linker
 ifeq ($(COMPILE), gcc)
