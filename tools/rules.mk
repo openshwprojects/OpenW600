@@ -31,10 +31,10 @@ UNAME_S:=$(shell uname -s)
 # default use 1m flash
 
 ifeq ($(FLASH_SIZE), 2M)
-	IMG_TYPE:=2M
+	IMG_TYPE:=3
 	IMG_START:=100000
 else
-	IMG_TYPE:=1M
+	IMG_TYPE:=0
 	IMG_START:=90000
 endif
 
@@ -78,6 +78,11 @@ endif
 
 ifeq ($(UNAME_S),Linux)
 	@echo "linux platform"
+
+	@echo "Building makeimg"
+	@gcc $(SDK_TOOLS)/makeimgsource/makeimg.c -lpthread -O2 -o $(SDK_TOOLS)/makeimg
+	@gcc $(SDK_TOOLS)/makeimgsource/makeimg_all.c -lpthread -O2 -o $(SDK_TOOLS)/makeimg_all
+
 	@cp $(FIRMWAREDIR)/$(TARGET)/$(TARGET).bin $(FIRMWAREDIR)/$(TARGET)/$(TARGET).bin.bk
 	@gzip -fv $(FIRMWAREDIR)/$(TARGET)/$(TARGET).bin
 	@mv $(FIRMWAREDIR)/$(TARGET)/$(TARGET).bin.bk $(FIRMWAREDIR)/$(TARGET)/$(TARGET).bin
