@@ -22,7 +22,7 @@ OBINS := $(GEN_BINS:%=$(BINODIR)/%)
 
 
 #export LIB_EXT;
-
+EXTRA_CCFLAGS += -DUSER_SW_VER=\"$(APP_VERSION)\"
 CFLAGS = $(CCFLAGS) $(DEFINES) $(EXTRA_CCFLAGS) $(INCLUDES)
 
 UNAME_O:=$(shell uname -o)
@@ -78,7 +78,7 @@ endif
 
 ifeq ($(UNAME_S),Linux)
 	@echo "linux platform"
-
+	
 	@echo "Building makeimg"
 	@gcc $(SDK_TOOLS)/makeimgsource/makeimg.c -lpthread -O2 -o $(SDK_TOOLS)/makeimg
 	@gcc $(SDK_TOOLS)/makeimgsource/makeimg_all.c -lpthread -O2 -o $(SDK_TOOLS)/makeimg_all

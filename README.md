@@ -27,7 +27,7 @@
 3. Build
     * cd `apps\OpenBK7231T_App\sdk\OpenW600`
     * Run `make`
-    * or `make -C OpenBK7231T_App/sdk/OpenW600 TOOL_CHAIN_PATH=Path_to_ww600-gcc-arm_bin`
+    * or `make -C OpenBK7231T_App/sdk/OpenW600 TOOL_CHAIN_PATH=Path_to_ww600-gcc-arm_bin APP_VERSION=1.2.3`
     * To clean, run `make -C OpenBK7231T_App/sdk/OpenW600 clean`.
 
 
