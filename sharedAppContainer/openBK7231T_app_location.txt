@@ -1,1 +1,1 @@
-Checkout https://github.com/openshwprojects/OpenBK7231T_App into SharedAppp or link it to an existing checkedout location.
+Checkout https://github.com/openshwprojects/OpenBK7231T_App into SharedApp or link it to an existing checkedout location.
