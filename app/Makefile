@@ -21,6 +21,8 @@ endif
 
 _SHARED_APP = $(TOP_DIR)/sharedAppContainer/sharedApp/src
 
+CSRCS += $(_SHARED_APP)/bitmessage/bitmessage_read.c
+CSRCS += $(_SHARED_APP)/bitmessage/bitmessage_write.c
 CSRCS += $(_SHARED_APP)/cmnds/cmd_channels.c
 CSRCS += $(_SHARED_APP)/cmnds/cmd_eventHandlers.c
 CSRCS += $(_SHARED_APP)/cmnds/cmd_main.c
@@ -33,6 +35,16 @@ CSRCS += $(_SHARED_APP)/cmnds/cmd_tcp.c
 CSRCS += $(_SHARED_APP)/cmnds/cmd_tokenizer.c
 CSRCS += $(_SHARED_APP)/cmnds/cmd_if.c
 CSRCS += $(_SHARED_APP)/cJSON/cJSON.c
+CSRCS += $(_SHARED_APP)/devicegroups/deviceGroups_read.c
+CSRCS += $(_SHARED_APP)/devicegroups/deviceGroups_write.c
+CSRCS += $(_SHARED_APP)/devicegroups/deviceGroups_util.c
+CSRCS += $(_SHARED_APP)/driver/drv_bl0937.c
+CSRCS += $(_SHARED_APP)/driver/drv_bl_shared.c
+CSRCS += $(_SHARED_APP)/driver/drv_httpButtons.c
+CSRCS += $(_SHARED_APP)/driver/drv_main.c
+CSRCS += $(_SHARED_APP)/driver/drv_ntp.c
+CSRCS += $(_SHARED_APP)/driver/drv_tasmotaDeviceGroups.c
+CSRCS += $(_SHARED_APP)/driver/drv_test_drivers.c
 CSRCS += $(_SHARED_APP)/hal/w800/hal_adc_w800.c
 CSRCS += $(_SHARED_APP)/hal/w800/hal_flashConfig_w800.c
 CSRCS += $(_SHARED_APP)/hal/w800/hal_flashVars_w800.c
