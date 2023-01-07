@@ -119,6 +119,8 @@ int http_fwup(HTTPParameters ClientParams)
                         if (TRUE == tls_fwup_img_header_check(booter))
                         {
                             totalLen = booter->upd_img_len + sizeof(T_BOOTER);
+                            OTA_ResetProgress();
+                            OTA_SetTotalBytes(totalLen);
                         }
                         else
                         {
@@ -169,9 +171,10 @@ int http_fwup(HTTPParameters ClientParams)
                         break;
                     }
                     else{
+                        OTA_IncrementProgress(nSize);
                         recvLen += nSize;
                         partLen += nSize;           
-                        printf("download %d / %d\n", recvLen, totalLen);
+                        //printf("download %d / %d\n", recvLen, totalLen);  //Status is being printed in our source
                         if(partLen == content_length){
                             now_state = SHUTDOWN_LINK;
                             break;

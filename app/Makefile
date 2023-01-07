@@ -68,6 +68,7 @@ CSRCS += $(_SHARED_APP)/new_cfg.c
 CSRCS += $(_SHARED_APP)/new_common.c
 CSRCS += $(_SHARED_APP)/new_ping.c
 CSRCS += $(_SHARED_APP)/new_pins.c
+CSRCS += $(_SHARED_APP)/ota/ota.c
 CSRCS += $(_SHARED_APP)/rgb2hsv.c
 CSRCS += $(_SHARED_APP)/tiny_crc8.c
 CSRCS += $(_SHARED_APP)/user_main.c
