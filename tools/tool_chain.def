@@ -43,6 +43,7 @@ ifeq ($(COMPILE), gcc)
 		LINK = $(TOOL_CHAIN_PATH)arm-none-eabi-ld.exe
 		OBJCOPY = $(TOOL_CHAIN_PATH)arm-none-eabi-objcopy
 		OBJDUMP = $(TOOL_CHAIN_PATH)arm-none-eabi-objdump
+		SIZE = $(TOOL_CHAIN_PATH)arm-none-eabi-size
 	else
 		AR = $(TOOL_CHAIN_PATH)arm-none-eabi-ar
 		ASM = @echo "GNU-ASM $<"; $(TOOL_CHAIN_PATH)arm-none-eabi-gcc
@@ -51,6 +52,7 @@ ifeq ($(COMPILE), gcc)
 		LINK = @echo "GNU-LINK $<"; $(TOOL_CHAIN_PATH)arm-none-eabi-ld.exe
 		OBJCOPY = @echo "GNU-OBJCOPY $<"; $(TOOL_CHAIN_PATH)arm-none-eabi-objcopy
 		OBJDUMP = @echo "GNU-OBJDUMP $<"; $(TOOL_CHAIN_PATH)arm-none-eabi-objdump
+		SIZE = @echo "GNU-SIZE $<"; $(TOOL_CHAIN_PATH)arm-none-eabi-size
 	endif
 else
 	KEIL_PATH =  /cygdrive/d/Keil_V5/ARM

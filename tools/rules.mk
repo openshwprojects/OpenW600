@@ -69,6 +69,9 @@ $(BINODIR)/%.bin: $(IMAGEODIR)/%.out
 	@mkdir -p $(FIRMWAREDIR)
 	@mkdir -p $(FIRMWAREDIR)/$(TARGET)
 ifeq ($(COMPILE), gcc)
+	@echo ""
+	@$(SIZE) $(IMAGEODIR)/$(TARGET).out
+	@echo ""
 	@$(OBJCOPY) --output-target=binary -S -g -x -X -R .sbss -R .bss -R .reginfo -R .stack $(IMAGEODIR)/$(TARGET).out $(FIRMWAREDIR)/$(TARGET)/$(TARGET).bin	
 else
 	@$(FROMELF) --bin -o  $(FIRMWAREDIR)/$(TARGET)/$(TARGET).bin $(IMAGEODIR)/$(TARGET).out  
