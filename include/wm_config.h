@@ -22,8 +22,8 @@
 #define TLS_CONFIG_UART									CFG_ON  /*UART*/
 
 /**Host Interface&Command**/
-#define TLS_CONFIG_HOSTIF 								CFG_ON
-#define TLS_CONFIG_AT_CMD								(CFG_ON && TLS_CONFIG_HOSTIF)
+#define TLS_CONFIG_HOSTIF 								CFG_OFF
+#define TLS_CONFIG_AT_CMD								(CFG_OFF && TLS_CONFIG_HOSTIF)
 #define TLS_CONFIG_RI_CMD								(CFG_ON && TLS_CONFIG_HOSTIF)
 #define TLS_CONFIG_RMMS									CFG_OFF
 
@@ -42,7 +42,7 @@
 #define	TLS_CONFIG_HARD_CRYPTO							CFG_ON
 
 #define TLS_CONFIG_USE_POLARSSL           				CFG_OFF
-#define TLS_CONFIG_SERVER_SIDE_SSL                      (CFG_ON && TLS_CONFIG_HTTP_CLIENT_SECURE)         /*MUST configure TLS_CONFIG_HTTP_CLIENT_SECURE CFG_ON */
+#define TLS_CONFIG_SERVER_SIDE_SSL                      (CFG_OFF && TLS_CONFIG_HTTP_CLIENT_SECURE)         /*MUST configure TLS_CONFIG_HTTP_CLIENT_SECURE CFG_ON */
 
 
 /** HTTP CLIENT **/
@@ -70,13 +70,14 @@ CRYPTO
 #define TLS_CONFIG_DLNA                          		CFG_OFF && TLS_CONFIG_UPNP
 
 
-#define TLS_CONFIG_NTP 									CFG_ON
+#define TLS_CONFIG_NTP 									CFG_OFF
 
 
 #define  VERC_DNS_OPT						            CFG_ON
 #define  VERC_LWIP_OPT                                  CFG_ON
 #include "wm_os_config.h"  //if you want to use source code,please open
-#include "wm_wifi_config.h"
+#include "wm_wifi_config.h"
+
 
 #include "wm_ram_config.h"
 #endif /*__WM_CONFIG_H__*/
