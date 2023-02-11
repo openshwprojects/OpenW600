@@ -27,7 +27,7 @@ GEN_BINS = $(TARGET).bin
 SUBDIRS = 	\
 	$(TOP_DIR)/app	\
 	$(TOP_DIR)/platform/boot/$(COMPILE)
-	#	$(TOP_DIR)/demo
+#	$(TOP_DIR)/demo
 endif # } PDIR
 
 ifndef PDIR # {
@@ -36,9 +36,15 @@ SUBDIRS += \
 	$(TOP_DIR)/platform/common 		\
 	$(TOP_DIR)/platform/drivers		\
 	$(TOP_DIR)/platform/sys			\
-	$(TOP_DIR)/src/network	\
-	$(TOP_DIR)/src/os			\
-	$(TOP_DIR)/src/app
+	$(TOP_DIR)/src/network			\
+	$(TOP_DIR)/src/os				\
+	$(TOP_DIR)/src/app/dhcpserver	\
+	$(TOP_DIR)/src/app/dnsserver	\
+	$(TOP_DIR)/src/app/httpclient	\
+	$(TOP_DIR)/src/app/matrixssl	\
+	$(TOP_DIR)/src/app/oneshotconfig	\
+	$(TOP_DIR)/src/app/ota			\
+	$(TOP_DIR)/src/app/web
 endif
 endif
 
@@ -55,8 +61,14 @@ COMPONENTS_$(TARGET) += \
 	$(TOP_DIR)/platform/drivers/libdrivers$(LIB_EXT)		\
 	$(TOP_DIR)/platform/sys/libsys$(LIB_EXT)			\
 	$(TOP_DIR)/src/network/libnetwork$(LIB_EXT)	\
-	$(TOP_DIR)/src/os/libos$(LIB_EXT)			\
-	$(TOP_DIR)/src/app/libapp$(LIB_EXT)
+	$(TOP_DIR)/src/os/libos$(LIB_EXT)	\
+	$(TOP_DIR)/src/app/dhcpserver/libdhcpserver$(LIB_EXT)	\
+	$(TOP_DIR)/src/app/dnsserver/libdnsserver$(LIB_EXT)	\
+	$(TOP_DIR)/src/app/httpclient/libhttpclient$(LIB_EXT)	\
+	$(TOP_DIR)/src/app/matrixssl/libmatrixssl$(LIB_EXT)	\
+	$(TOP_DIR)/src/app/oneshotconfig/liboneshotconfig$(LIB_EXT)	\
+	$(TOP_DIR)/src/app/ota/libota$(LIB_EXT)	\
+	$(TOP_DIR)/src/app/web/libweb$(LIB_EXT)
 endif
 
 
