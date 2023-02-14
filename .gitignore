@@ -29,3 +29,4 @@ bin/w600/
 flashw600.sh
 sharedAppContainer/sharedApp/
 w600-gcc-arm/
+*.sh
