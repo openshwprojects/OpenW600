@@ -59,7 +59,7 @@ DEP_OBJS_$(1) = $$(foreach obj,$$(filter %.o,$$(COMPONENTS_$(1))),$$(dir $$(obj)
 $$(IMAGEODIR)/$(1).out: $$(BOOT_OBJS) $$(OBJS) $$(DEP_OBJS_$(1)) $$(DEP_LIBS_$(1)) $$(DEPENDS_$(1))
 	@mkdir -p $$(IMAGEODIR)
 ifeq ($(COMPILE), gcc)
-	$(CC) $$(BOOT_OBJS) -Wl,--gc-sections -Wl,--start-group  $$(OBJS) $$(DEP_OBJS_$(1)) $$(DEP_LIBS_$(1)) $$(if $$(LINKFLAGS_$(1)),$$(LINKFLAGS_$(1)),$$(LINKFLAGS_DEFAULT))   -Wl,--end-group  $(MAP) $(INFO) $(LIST) -o $$@ $(LINKFLAGS) 
+	$(CC) $$(BOOT_OBJS) -Wl,--gc-sections -Wl,--whole-archive  $$(OBJS) $$(DEP_OBJS_$(1)) $$(DEP_LIBS_$(1)) $$(if $$(LINKFLAGS_$(1)),$$(LINKFLAGS_$(1)),$$(LINKFLAGS_DEFAULT))   -Wl,--no-whole-archive  $(MAP) $(INFO) $(LIST) -o $$@ $(LINKFLAGS) 
 else
 	$(LINK) $(LINKFLAGS)  $$(OBJS) $$(DEP_OBJS_$(1)) $$(DEP_LIBS_$(1)) $$(if $$(LINKFLAGS_$(1)),$$(LINKFLAGS_$(1)),$$(LINKFLAGS_DEFAULT)) $(MAP) $(INFO) $(LIST) -o $$@
 endif

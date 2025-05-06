@@ -125,7 +125,7 @@ static int ip_reass_free_complete_datagram(struct ip_reassdata *ipr, struct ip_r
  * Should be called every 1000 msec (defined by IP_TMR_INTERVAL).
  */
 void
-ip_reass_tmr(void)
+__attribute__((weak)) ip_reass_tmr(void)
 {
   struct ip_reassdata *r, *prev = NULL;
 
@@ -495,7 +495,7 @@ freepbuf:
  * @return NULL if reassembly is incomplete, ? otherwise
  */
 struct pbuf *
-ip4_reass(struct pbuf *p)
+__attribute__((weak)) ip4_reass(struct pbuf *p)
 {
   struct pbuf *r;
   struct ip_hdr *fraghdr;
@@ -715,7 +715,7 @@ ipfrag_free_pbuf_custom(struct pbuf *p)
  * @return ERR_OK if sent successfully, err_t otherwise
  */
 err_t
-ip4_frag(struct pbuf *p, struct netif *netif, const ip4_addr_t *dest)
+__attribute__((weak)) ip4_frag(struct pbuf *p, struct netif *netif, const ip4_addr_t *dest)
 {
   struct pbuf *rambuf;
 #if !LWIP_NETIF_TX_SINGLE_PBUF
