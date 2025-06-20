@@ -26,7 +26,7 @@ endif
 #   makefile at its root level - these are then overridden
 #   for a subtree within the makefile rooted therein
 #
-#DEFINES +=
+DEFINES += -fno-lto
 
 #############################################################
 # Recursion Magic - Don't touch this!!

@@ -10,6 +10,7 @@
 #ifndef WM_SOCKET_API_H
 #define WM_SOCKET_API_H
 #include "wm_config.h"
+#include "lwip/lwipopts.h"
 #include "wm_sockets2.0.3.h"
 #endif
 

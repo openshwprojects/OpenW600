@@ -102,7 +102,8 @@ ifeq ($(COMPILE), gcc)
 		-march=armv7-m \
 		-mabi=aapcs \
 		-fno-builtin	\
-		-w
+		-w \
+		-flto
 	
 	ASMFLAGS := -Wall \
 		-mthumb-interwork \
@@ -112,7 +113,7 @@ ifeq ($(COMPILE), gcc)
 		-march=armv7-m \
 		-mabi=aapcs \
 		-fno-builtin \
-		-Os
+		-Os 
 	
 	ARFLAGS := ru
 #		-Wall	\
@@ -125,7 +126,7 @@ ifeq ($(COMPILE), gcc)
 		-nostartfiles	\
 		-mthumb	\
 		-mcpu=cortex-m3	\
-		-lm
+		-lm -flto
 	MAP := -Wl,-Map,$(IMAGEODIR)/$(TARGET).map
 	INFO := 
 	LIST := 

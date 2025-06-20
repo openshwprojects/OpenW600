@@ -22,7 +22,7 @@
 #define LWIP_SOCKET                       TLS_CONFIG_SOCKET_STD
 #define LWIP_NETCONN                    TLS_CONFIG_SOCKET_STD
 
-#define MEM_SIZE                        30000
+#define MEM_SIZE                        (8*1024)
 
 /**
  * TCP_WND: The size of a TCP window.  This must be at least 
@@ -115,5 +115,11 @@
 #define ETHARP_SUPPORT_STATIC_ENTRIES   1
 #define LWIP_NETIF_HOSTNAME             1
 #define LWIP_TCP_KEEPALIVE              1
+#define LWIP_DEBUG                      0
+#if __GNUC__ >= 5
+#define LWIP_SOCKET_SELECT              1
+#define LWIP_TIMEVAL_PRIVATE            0
+#define IN_ADDR_T_DEFINED
+#endif
 
 #endif /* end of __LWIP_OPTS_H */

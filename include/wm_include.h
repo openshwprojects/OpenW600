@@ -67,6 +67,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "lwip/lwipopts.h"
 #include "wm_type_def.h"
 #include "wm_uart.h"
 #include "wm_gpio.h"
@@ -85,6 +86,5 @@
 #include "wm_demo.h"
 #include "wm_regs.h"
 #include "FreeRTOS.h"
-
 
 #endif
