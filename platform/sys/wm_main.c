@@ -128,19 +128,19 @@ void tls_os_timer_init(void)
 /* main program */
 /****************/
 
-void vApplicationIdleHook( void )
-{
-    /* clear watch dog interrupt */
-    tls_watchdog_clr();
-
-#if !defined(__CC_ARM)
-        __asm volatile ("wfi");
-#else
-        __WFI();
-#endif
-
-    return;
-}
+//void vApplicationIdleHook( void )
+//{
+//    /* clear watch dog interrupt */
+//    tls_watchdog_clr();
+//
+//#if !defined(__CC_ARM)
+//        __asm volatile ("wfi");
+//#else
+//        __WFI();
+//#endif
+//
+//    return;
+//}
 
 void tls_exception_handler(unsigned int *sp, unsigned int exceptinfo)
 {

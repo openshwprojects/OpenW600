@@ -25,7 +25,7 @@ Bin/*
 tools/makeimg
 tools/makeimg_all
 bin/w600/
-sharedAppContainer/sharedApp/
+sharedAppContainer/sharedApp
 w600-gcc-arm/
 b_full.sh
 b_rebuild.sh
